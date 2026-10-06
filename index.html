@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dylan Slye · Software &amp; AI Engineer</title>
+  <meta name="description" content="Dylan Slye, software and AI engineer. I build AI systems that do real work, from data pipeline to production. B.S. Data Science at UCF.">
+  <link rel="canonical" href="https://dylanslye.com/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F7F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dylan Slye">
+  <meta property="og:title" content="Dylan Slye · Software &amp; AI Engineer">
+  <meta property="og:description" content="I build AI systems that do real work, from data pipeline to production.">
+  <meta property="og:url" content="https://dylanslye.com/">
+  <!-- TODO: add a 1200x630 preview image to the repo root, then uncomment:
+  <meta property="og:image" content="https://dylanslye.com/og.png">
+  <meta property="og:image:alt" content="Dylan Slye, Software & AI Engineer">
+  -->
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect width="32" height="32" rx="7"/>
+          <path fill-rule="evenodd" d="M9 7h6.5a9 9 0 0 1 0 18H9zm4 4v10h2.5a5 5 0 0 0 0-10z"/>
+        </svg>
+        <span>Dylan Slye</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-resume"><a class="btn btn-sm" href="Dylan_Slye_Resume.pdf">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-name">
+      <div class="wrap hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Software &amp; AI engineer</p>
+          <h1 id="hero-name">Dylan Slye</h1>
+          <p class="pitch">I build AI systems that do <em>real work</em>, from data pipeline to production.</p>
+          <ul class="actions">
+            <li><a class="btn btn-primary" href="Dylan_Slye_Resume.pdf">Resume <span class="btn-tag">PDF</span></a></li>
+            <li><a class="btn" href="mailto:djslye28@gmail.com">Email</a></li>
+            <li><a class="btn" href="https://www.linkedin.com/in/dylanjslye">LinkedIn</a></li>
+            <li><a class="btn" href="https://github.com/djslye28">GitHub</a></li>
+          </ul>
+        </div>
+
+        <dl class="facts">
+          <div><dt>Now</dt><dd>Software Developer (Contract), Slye Marketing LLC</dd></div>
+          <div><dt>Degree</dt><dd>B.S. Data Science, University of Central Florida</dd></div>
+          <div><dt>Minors</dt><dd>Mathematics, Statistics</dd></div>
+          <div><dt>Graduating</dt><dd>December 2027</dd></div>
+          <div><dt>Stack</dt><dd>Python, TypeScript, PostgreSQL, Claude API</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="section-num" aria-hidden="true">01</span>
+          <h2 id="work-title">Selected work</h2>
+        </header>
+
+        <div class="projects">
+          <article class="project" aria-labelledby="p-nfl">
+            <div class="project-head">
+              <p class="meta"><span class="meta-num" aria-hidden="true">01</span>Independent research</p>
+              <h3 id="p-nfl">NFL Pre-Snap Play-Calling Prediction</h3>
+              <p class="summary">Predicts run vs. pass using only what a defender can see before the snap.</p>
+              <ul class="tags" aria-label="Stack">
+                <li>Python</li><li>NumPy</li><li>pandas</li><li>XGBoost</li><li>scikit-learn</li>
+              </ul>
+            </div>
+            <div class="project-body">
+              <dl class="metrics">
+                <div><dt>out-of-sample accuracy, 2018–2025</dt><dd>76.5%</dd></div>
+                <div><dt>above majority-class baseline</dt><dd>+15.5 pts</dd></div>
+                <div><dt>plays evaluated out of sample</dt><dd>262,953</dd></div>
+                <div><dt>offensive snaps curated, 2016–2025</dt><dd>343k+</dd></div>
+              </dl>
+              <ul class="points">
+                <li>Weekly expanding-window backtest: retrains on the prior season plus completed weeks, then holds each target week fully out of sample.</li>
+                <li>Chronology and perturbation audits check for target leakage.</li>
+                <li>Chose a regularized depth-7 global XGBoost model and rejected a more complex expert-blend ensemble that gained only 172 net correct calls.</li>
+              </ul>
+              <details>
+                <summary>More detail</summary>
+                <ul class="points">
+                  <li>76.4% accuracy on the 2025 season alone.</li>
+                  <li>The ensemble’s gain worked out to about 1 extra correct call per 1,529 plays. Not enough to justify the complexity.</li>
+                  <li>Defensive alignment is deliberately excluded: box count reflects the defense reacting to its own read.</li>
+                  <li>Logistic regression and a two-hidden-layer neural network written from scratch in NumPy: backpropagation, mini-batch Adam, early stopping.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="project" aria-labelledby="p-agent">
+            <div class="project-head">
+              <p class="meta"><span class="meta-num" aria-hidden="true">02</span>Built for Nexar · Slye Marketing LLC</p>
+              <h3 id="p-agent">AI Marketing Agent</h3>
+              <p class="summary">An agent that ran the marketing loop: research, draft, measure, refine.</p>
+              <ul class="tags" aria-label="Stack">
+                <li>Python</li><li>Claude API</li>
+              </ul>
+            </div>
+            <div class="project-body">
+              <div class="flow flow--loop">
+                <p class="flow-label">Loop</p>
+                <ol class="flow-steps">
+                  <li><span class="step-n" aria-hidden="true">01</span><span class="step-label">Scout industry info</span></li>
+                  <li><span class="step-n" aria-hidden="true">02</span><span class="step-label">Draft posts &amp; emails</span></li>
+                  <li><span class="step-n" aria-hidden="true">03</span><span class="step-label">Track click-through</span></li>
+                  <li><span class="step-n" aria-hidden="true">04</span><span class="step-label">Refine output</span></li>
+                </ol>
+                <p class="flow-note"><span aria-hidden="true">↺</span> Results feed back into the next round of drafts.</p>
+              </div>
+              <ul class="points">
+                <li>Drafted emails, LinkedIn posts, and X posts.</li>
+                <li>Tracked click-through performance and fed results back to refine future output.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project" aria-labelledby="p-finance">
+            <div class="project-head">
+              <p class="meta"><span class="meta-num" aria-hidden="true">03</span>Built for a client · Slye Marketing LLC</p>
+              <h3 id="p-finance">FinanceOS</h3>
+              <p class="summary">A multi-entity financial dashboard with a 13-week cash forecast.</p>
+              <ul class="tags" aria-label="Stack">
+                <li>Next.js</li><li>Node.js</li><li>PostgreSQL</li>
+              </ul>
+            </div>
+            <div class="project-body">
+              <div class="flow">
+                <p class="flow-label">Data flow</p>
+                <ol class="flow-steps">
+                  <li><span class="step-n" aria-hidden="true">01</span><span class="step-label">QuickBooks Online accounts</span></li>
+                  <li><span class="step-n" aria-hidden="true">02</span><span class="step-label">OAuth-secured API</span></li>
+                  <li><span class="step-n" aria-hidden="true">03</span><span class="step-label">Consolidated data</span></li>
+                  <li><span class="step-n" aria-hidden="true">04</span><span class="step-label">13-week forecast</span></li>
+                </ol>
+              </div>
+              <ul class="points">
+                <li>Consolidates financial data across multiple QuickBooks Online accounts.</li>
+                <li>Forecasting engine runs six methods, with confidence scoring and best/worst-case ranges.</li>
+                <li>Designed for non-finance stakeholders.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project" aria-labelledby="p-reelforge">
+            <div class="project-head">
+              <p class="meta"><span class="meta-num" aria-hidden="true">04</span>R&amp;D build · completed, retired as a product</p>
+              <h3 id="p-reelforge">ReelForge</h3>
+              <p class="summary">Turns a topic into a finished narrated video with no human in the loop.</p>
+              <ul class="tags" aria-label="Stack">
+                <li>TypeScript</li><li>PostgreSQL</li><li>Claude API</li><li>Fish Audio</li><li>Replicate</li><li>Remotion</li>
+              </ul>
+            </div>
+            <div class="project-body">
+              <div class="flow">
+                <p class="flow-label">Pipeline</p>
+                <ol class="flow-steps">
+                  <li><span class="step-n" aria-hidden="true">01</span><span class="step-label">Script</span></li>
+                  <li><span class="step-n" aria-hidden="true">02</span><span class="step-label">Narration</span></li>
+                  <li><span class="step-n" aria-hidden="true">03</span><span class="step-label">Archival assets</span></li>
+                  <li><span class="step-n" aria-hidden="true">04</span><span class="step-label">Render</span></li>
+                  <li><span class="step-n" aria-hidden="true">05</span><span class="step-label">Assemble</span></li>
+                </ol>
+              </div>
+              <ul class="points">
+                <li>A PostgreSQL state machine tracks jobs, retries, and per-run cost.</li>
+                <li>Cost per video: under $0.50 in the near-final build, down from <span class="nowrap">$0.50–0.70</span> in an earlier version.</li>
+                <li>Added source-verification checks after early runs produced unsupported factual claims.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <header class="section-head">
+          <span class="section-num" aria-hidden="true">02</span>
+          <h2 id="experience-title">Experience</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="entry">
+            <p class="entry-when">Fall 2025–present</p>
+            <div class="entry-body">
+              <h3>Software Developer (Contract)</h3>
+              <p class="entry-org">Slye Marketing LLC · Remote</p>
+              <p>Sole developer building AI automation and internal tools for client engagements, including the AI Marketing Agent and FinanceOS.</p>
+            </div>
+          </li>
+          <li class="entry">
+            <p class="entry-when">2023–2025</p>
+            <div class="entry-body">
+              <h3>Co-Founder &amp; Lead Instructor <span class="badge">Leadership</span></h3>
+              <p class="entry-org">CCPS Youth Coding · Collier County, FL</p>
+              <p>Co-founded a volunteer program teaching Python to 150+ middle schoolers across two schools. Recruited and trained high school instructors, and set up a younger cohort to keep it running after we graduated.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-panel">
+          <p class="section-num" aria-hidden="true">03</p>
+          <h2 id="contact-title">Contact</h2>
+          <p class="contact-email"><a href="mailto:djslye28@gmail.com">djslye28@gmail.com</a></p>
+          <ul class="contact-links">
+            <li><a href="https://www.linkedin.com/in/dylanjslye">LinkedIn <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/djslye28">GitHub <span aria-hidden="true">↗</span></a></li>
+            <li><a href="Dylan_Slye_Resume.pdf">Resume (PDF) <span aria-hidden="true">↓</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Dylan Slye</p>
+      <p>Hand-written HTML &amp; CSS</p>
+    </div>
+  </footer>
+</body>
+</html>
